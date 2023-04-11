@@ -16,7 +16,7 @@ public class FileReader {
                 Long.parseLong(parsing.get(3)));
     }
 
-    private List<String> parsing (File file){
+    private List<String> parsing(File file) {
         List<String> profilDate = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new java.io.FileReader(file))) {
             String line;
@@ -25,10 +25,7 @@ public class FileReader {
                 String[] s = line.split(" ");
                 profilDate.add(s[1]);
             }
-        } catch (FileNotFoundException e) {
-
         } catch (IOException e) {
-            throw new RuntimeException(e);
         }
         return profilDate;
     }
