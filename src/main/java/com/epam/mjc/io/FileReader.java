@@ -25,7 +25,7 @@ public class FileReader {
                 profilDate.add(s[1]);
             }
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
         return profilDate;
     }
