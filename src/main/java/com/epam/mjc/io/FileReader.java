@@ -5,9 +5,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class FileReader {
+    private static final Logger LOGGER = Logger.getLogger(FileReader.class.getName());
 
     public Profile getDataFromFile(File file) {
         List<String> parsing = parsing(file);
@@ -25,7 +28,7 @@ public class FileReader {
                 profilDate.add(s[1]);
             }
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            LOGGER.log(Level.SEVERE, "Error parsing file", e);
         }
         return profilDate;
     }
